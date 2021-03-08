@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Item from './Item/Item'
 import axios from 'axios'
 
-function Items() {
+function Items(props) {
     const [items, setItems] = useState([]);
      useEffect(() => {
         const itemdata = axios.get('https://tathkra.com/learnapi/api/MenusMaster')
@@ -17,11 +17,14 @@ function Items() {
 
     const itemsJsxElements = items.map((item,index) => {
         debugger;
-        return <Item item={item} key={item.id}/>;
+        return <Item item={item} key={item.id} clicked={() => props.itemClicked(item)}/>;
     })
     return (
         <div>
-            <h1 style={{padding:'15px'}}>items</h1>
+            <h4 style={{padding:'10px 15px'}}>items
+            <div className="d-inline-block" style={{ width: '85%',
+    textAlign: 'right'}}>Net Amount: {props.netAmount} KWD</div>
+            </h4>
             <div className='item-container'>
             {itemsJsxElements}
             </div>

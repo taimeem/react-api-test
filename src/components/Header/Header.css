@@ -34,7 +34,8 @@
   margin-right: 20px;
 }
 .Order-section {
-  height: 220px;
+  height: 275px;
+  padding: 20px;
   border-bottom: 1px solid #ddd;
 }
 .item-container {
@@ -43,11 +44,11 @@
   height: 280px;
   overflow-y: scroll;
   margin: 0 auto;
-  margin: 0 60px;
+  margin: 0 20px;
 }
 
 .item {
-  width: 150px;
+  width: 218px;
   height: 150px;
   border: 1px solid #f5f4f4;
   margin: 0 20px 20px 0;
@@ -55,4 +56,26 @@
   align-items: center;
   justify-content: center;
   background-color: rgb(101 187 255 / 63%);
+}
+
+.tableFixHead {
+  overflow-y: auto;
+  height: 250px;
+}
+.tableFixHead thead th {
+  position: sticky;
+  top: 0;
+}
+
+/* Just common table stuff. Really. */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  padding: 8px 16px;
+}
+th {
+  background: #eee;
 }
